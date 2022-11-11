@@ -1,4 +1,4 @@
-module alphabet_spam
+module alphabetspam
 
 go 1.19
 

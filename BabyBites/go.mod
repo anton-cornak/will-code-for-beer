@@ -1,4 +1,4 @@
-module baby_bites
+module babybites
 
 go 1.19
 
