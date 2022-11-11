@@ -1,10 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strings"
 )
 
 func AlphabetSpam(text string) (res []float64) {
@@ -37,10 +34,12 @@ func AlphabetSpam(text string) (res []float64) {
 }
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	text, _ := reader.ReadString('\n')
-	text = strings.Replace(text, "\r\n", "", -1)
-	fmt.Println(len(text))
+	var text string
+	fmt.Scanln(&text)
 	res := AlphabetSpam(text)
-	fmt.Printf("%f\n%f\n%f\n%f\n", res[0], res[1], res[2], res[3])
+
+	fmt.Println(res[0])
+	fmt.Println(res[1])
+	fmt.Println(res[2])
+	fmt.Println(res[3])
 }
