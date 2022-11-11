@@ -22,7 +22,7 @@ func TestAlphabetSpam(t *testing.T) {
 	for _, test := range testCases {
 		assert.Equal(
 			test.res,
-			alphabetSpam(test.x),
+			AlphabetSpam(test.x),
 		)
 	}
 }
