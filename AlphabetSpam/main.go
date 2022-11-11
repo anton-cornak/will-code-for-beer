@@ -1,6 +1,13 @@
 package alphabetspam
 
+import (
+	"fmt"
+	"time"
+)
+
 func alphabetSpam(text string) (res []float64) {
+	start := time.Now()
+
 	var whitespaces_count, lowercase_count, uppercase_count, symbol_count int
 
 	for _, c := range text {
@@ -25,6 +32,9 @@ func alphabetSpam(text string) (res []float64) {
 	res = append(res, float64(lowercase_count)/length)
 	res = append(res, float64(uppercase_count)/length)
 	res = append(res, float64(symbol_count)/length)
+
+	end := time.Now()
+	fmt.Println("elapsed: ", end.Sub(start))
 
 	return res
 }
