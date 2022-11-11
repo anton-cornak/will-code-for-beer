@@ -1,4 +1,4 @@
-package main
+package alphabetspam
 
 import (
 	"testing"
