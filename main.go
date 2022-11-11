@@ -1,4 +1,11 @@
-package alphabetspam
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func AlphabetSpam(text string) (res []float64) {
 	var whitespaces_count, lowercase_count, uppercase_count, symbol_count int
@@ -27,4 +34,13 @@ func AlphabetSpam(text string) (res []float64) {
 	res = append(res, float64(symbol_count)/length)
 
 	return res
+}
+
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+	text, _ := reader.ReadString('\n')
+	text = strings.Replace(text, "\r\n", "", -1)
+	fmt.Println(len(text))
+	res := AlphabetSpam(text)
+	fmt.Printf("%f\n%f\n%f\n%f\n", res[0], res[1], res[2], res[3])
 }
